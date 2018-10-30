@@ -15,7 +15,7 @@ public class Reader {
 	List<Double> data = new ArrayList<Double>();
 	List<Double> timeIndex = new ArrayList<Double>();
 	static double s = 1/44100;
-	static int sampleSize= 32;
+	static int sampleSize= 65536;
 	Reader()
 	{
 	//data= null;
@@ -23,7 +23,7 @@ public class Reader {
 	
 	public void importData()
 	  throws IOException {
-	     String file ="src/ringtoneData.txt";
+	     String file ="src/myToneProcessed.txt";
 	      
 	     BufferedReader readerO = new BufferedReader(new FileReader(file));
 	    int i=0;
