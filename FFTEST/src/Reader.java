@@ -1,7 +1,11 @@
 /*
- * 
- * Author: Muhammad Ahmed
- * Purpose: Reads data from text file
+// program: Reader.java
+// author: Muhammad Ahmed
+// course: CS 427
+// date: 29-Oct-2018
+// assignment #3
+// description: this class's purpose is to import sound data
+//from a text file into arrays and provide FFT.java the array when requested through the getters.
  */
 
 import java.io.BufferedReader;
@@ -25,17 +29,17 @@ public class Reader {
 	  throws IOException {
 	     String file ="src/myToneProcessed.txt";
 	      
-	     BufferedReader readerO = new BufferedReader(new FileReader(file));
+	     BufferedReader readerO = new BufferedReader(new FileReader(file)); //Initialize and read file
 	    int i=0;
 	    String t=null;
 	    while ( i<sampleSize) {
-			timeIndex.add(i*s);
+			timeIndex.add(i*s);  	//add time index
 
-	    	t= readerO.readLine();
+	    	t= readerO.readLine();  	//read the line into a string
 			data.add(Double.parseDouble(t));
 			i=i+1;	     
 	}
-	     readerO.close();
+	     readerO.close();			//Close file after processing
 
 	}
 	
@@ -50,10 +54,10 @@ public class Reader {
 	
 	public double[] getRealData()
 	{
-		double[] tempA =new double[data.size()];
+		double[] tempA =new double[data.size()];  
 		for (int i=0; i<data.size();i++)
 		{
-			tempA[i]=data.get(i);
+			tempA[i]=data.get(i);   // cast arraylist to double[] type
 		}
 		return tempA;
 	}
